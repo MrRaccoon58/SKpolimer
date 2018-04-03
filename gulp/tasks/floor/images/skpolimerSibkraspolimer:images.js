@@ -1,13 +1,13 @@
 "use strict";
 
 module.exports = function() {
-  $.gulp.task("skpolimerSibkraspolimer:images", function() {
+  $.gulp.task("pass.ftp", function() {
     var sibpoliceFtp = $.ftp.create({
-      host: $.pass.sibpolic.host,
-      user: $.pass.sibpolic.user,
-      password: $.pass.sibpolic.password,
-      parallel: $.pass.sibpolic.parallel,
-      log: $.pass.sibpolic.log,
+      host: $.pass.ftp.sibpolic.host,
+      user: $.pass.ftp.sibpolic.user,
+      password: $.pass.ftp.sibpolic.password,
+      parallel: $.pass.ftp.sibpolic.parallel,
+      log: $.pass.ftp.sibpolic.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить

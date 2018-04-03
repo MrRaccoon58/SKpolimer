@@ -3,11 +3,11 @@
 module.exports = function() {
   $.gulp.task("zolotosnab:images", function() {
     var zolotosnFtp = $.ftp.create({
-      host: $.config.pass.zolotosn.host,
-      user: $.config.pass.zolotosn.user,
-      password: $.config.pass.zolotosn.password,
-      parallel: $.config.pass.zolotosn.parallel,
-      // log: $.config.pass.zolotosn.log,
+      host: $.pass.ftp.zolotosn.host,
+      user: $.pass.ftp.zolotosn.user,
+      password: $.pass.ftp.zolotosn.password,
+      parallel: $.pass.ftp.zolotosn.parallel,
+      // log: $.pass.ftp.zolotosn.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить

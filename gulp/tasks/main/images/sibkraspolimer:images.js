@@ -3,11 +3,11 @@
 module.exports = function() {
   $.gulp.task("sibkraspolimer:images", function() {
     var sibpoliceFtp = $.ftp.create({
-      host: $.config.pass.sibpolic.host,
-      user: $.config.pass.sibpolic.user,
-      password: $.config.pass.sibpolic.password,
-      parallel: $.config.pass.sibpolic.parallel,
-      // log: $.config.pass.sibpolic.log,
+      host: $.pass.ftp.sibpolic.host,
+      user: $.pass.ftp.sibpolic.user,
+      password: $.pass.ftp.sibpolic.password,
+      parallel: $.pass.ftp.sibpolic.parallel,
+      // log: $.pass.ftp.sibpolic.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить

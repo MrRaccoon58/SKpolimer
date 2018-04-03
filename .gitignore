@@ -1,6 +1,6 @@
 #user ignore list
 
-gulp/_config.js
+gulp/pass.js
 
 # Numerous always-ignore extensions
 *.rar

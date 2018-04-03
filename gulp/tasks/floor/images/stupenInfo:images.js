@@ -4,11 +4,11 @@
 module.exports = function() {
   $.gulp.task("stupenInfo:images", function() {
     var zolotosnFtp = $.ftp.create({
-      host: $.pass.zolotosn.host,
-      user: $.pass.zolotosn.user,
-      password: $.pass.zolotosn.password,
-      parallel: $.pass.zolotosn.parallel,
-      log: $.pass.zolotosn.log,
+      host: $.pass.ftp.zolotosn.host,
+      user: $.pass.ftp.zolotosn.user,
+      password: $.pass.ftp.zolotosn.password,
+      parallel: $.pass.ftp.zolotosn.parallel,
+      log: $.pass.ftp.zolotosn.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить
