@@ -3,11 +3,11 @@
 module.exports = function() {
   $.gulp.task("skpolimer:images", function() {
     var skpolimerFtp = $.ftp.create({
-      host: "ftp.skpolimer.nichost.ru",
-      user: "skpolimer_ftp",
-      password: "x4x4u3ey",
-      parallel: 2,
-      log: $.p.util.log
+      host: $.pass.skpolimer.host,
+      user: $.pass.skpolimer.user,
+      password: $.pass.skpolimer.password,
+      parallel: $.pass.skpolimer.parallel,
+      log: $.pass.skpolimer.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить

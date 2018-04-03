@@ -2,24 +2,24 @@
 
 module.exports = function() {
   $.gulp.task("sibkraspolimer:images", function() {
-    var zolotosnFtp = $.ftp.create({
-      host: "yutex25.yutex.ru",
-      user: "zolotosn",
-      password: "lNxmCroyGZIo_8543",
-      parallel: 2,
-      log: $.p.util.log
+    var sibpoliceFtp = $.ftp.create({
+      host: $.config.pass.sibpolic.host,
+      user: $.config.pass.sibpolic.user,
+      password: $.config.pass.sibpolic.password,
+      parallel: $.config.pass.sibpolic.parallel,
+      // log: $.config.pass.sibpolic.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить
-    var globs = ["./src/floor/images/**/*.jpg"];
+    var globs = ["./src/main/images/**/*.jpg"];
 
     // using base = '.' will transfer everything to /public_html correctly
     // turn off buffering in gulp.src for best performance
     return $.gulp
       .src(globs, {
-        base: "./src/floor/images/", //"обрезаем" ненужный путь
+        base: "./src/main/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(zolotosnFtp.newer("/www_Prostup-info.ru/img")) 
-      .pipe(zolotosnFtp.dest("/www_Prostup-info.ru/img"));
+      .pipe(sibpoliceFtp.newer("/sibkraspolimer.ru/images")) 
+      .pipe(sibpoliceFtp.dest("/sibkraspolimer.ru/images"));
   });
 };

@@ -3,11 +3,11 @@
 module.exports = function() {
   $.gulp.task("prostupInfo:images", function() {
     var zolotosnFtp = $.ftp.create({
-      host: "yutex25.yutex.ru",
-      user: "zolotosn",
-      password: "lNxmCroyGZIo_8543",
-      parallel: 2,
-      log: $.p.util.log
+      host: $.pass.zolotosn.host,
+      user: $.pass.zolotosn.user,
+      password: $.pass.zolotosn.password,
+      parallel: $.pass.zolotosn.parallel,
+      log: $.pass.zolotosn.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить

@@ -24,3 +24,9 @@ $.gulp.task('floor:images:upload', //заливка изображений на 
         'skpolimerSibkraspolimer:images',
   )
 );
+
+$.gulp.task('main:images:upload', 
+    $.gulp.series(
+      'sibkraspolimer:images',
+    )
+);
