@@ -3,7 +3,7 @@
 
 module.exports = function() {
   $.gulp.task("stupenInfo:images", function() {
-    var zolotosnFtp = $.ftp.create({
+    var ftp = $.ftp.create({
       host: $.pass.ftp.zolotosn.host,
       user: $.pass.ftp.zolotosn.user,
       password: $.pass.ftp.zolotosn.password,
@@ -20,7 +20,7 @@ module.exports = function() {
       .src(globs, {
         base: "./src/floor/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(zolotosnFtp.newer("/www_Stupen-info.ru/images/stories")) 
-      .pipe(zolotosnFtp.dest("/www_Stupen-info.ru/images/stories"));
+      .pipe(ftp.newer("/www_Stupen-info.ru/images/stories")) 
+      .pipe(ftp.dest("/www_Stupen-info.ru/images/stories"));
   });
 };

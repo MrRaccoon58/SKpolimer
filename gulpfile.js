@@ -2,7 +2,7 @@
 
 global.$ = {
   package: require("./package.json"),
-  config: require("./gulp/config.js"),
+  pass: require("./gulp/pass.js"),
   path: {
     task: require("./gulp/path/tasks.js")
   },
@@ -15,13 +15,13 @@ global.$ = {
 $.path.task.forEach(function(taskPath) {
   require(taskPath)();
 });
-
+// Если стоит пометка не актуально то значит картинки загружаются на сервер через плагин и пока не понятно как реализовать правильно
 $.gulp.task('floor:images:upload', //заливка изображений на все напольные сайты
   $.gulp.series(
         'prostupInfo:images',
         'stupenInfo:images',
         'skpolimer:images',
-        'skpolimerSibkraspolimer:images',
+        // 'skpolimerSibkraspolimer:images', // не актуально
   )
 );
 

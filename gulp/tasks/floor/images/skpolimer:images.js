@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task("skpolimer:images", function() {
-    var skpolimerFtp = $.ftp.create({
+    var ftp = $.ftp.create({
       host: $.pass.ftp.skpolimer.host,
       user: $.pass.ftp.skpolimer.user,
       password: $.pass.ftp.skpolimer.password,
@@ -19,7 +19,7 @@ module.exports = function() {
       .src(globs, {
         base: "./src/floor/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(skpolimerFtp.newer("/skpolimer.ru/docs/images"))
-      .pipe(skpolimerFtp.dest("/skpolimer.ru/docs/images"));
+      .pipe(ftp.newer("/skpolimer.ru/docs/images"))
+      .pipe(ftp.dest("/skpolimer.ru/docs/images"));
   });
 };

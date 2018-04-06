@@ -1,8 +1,8 @@
 "use strict";
 
 module.exports = function() {
-  $.gulp.task("pass.ftp", function() {
-    var sibpoliceFtp = $.ftp.create({
+  $.gulp.task("skpolimerSibkraspolimer:images", function() {
+    var ftp = $.ftp.create({
       host: $.pass.ftp.sibpolic.host,
       user: $.pass.ftp.sibpolic.user,
       password: $.pass.ftp.sibpolic.password,
@@ -19,7 +19,7 @@ module.exports = function() {
       .src(globs, {
         base: "./src/floor/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(sibpoliceFtp.newer("/skpolimer-new/images")) 
-      .pipe(sibpoliceFtp.dest("/skpolimer-new/images"));
+      .pipe(ftp.newer("/skpolimer-new/images")) 
+      .pipe(ftp.dest("/skpolimer-new/images"));
   });
 };
