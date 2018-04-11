@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function() {
-  $.gulp.task("sibkraspolimer:images", function() {
+  $.gulp.task("ftp:main:img:sk", function() {
     var sibpoliceFtp = $.ftp.create({
       host: $.pass.ftp.sibpolic.host,
       user: $.pass.ftp.sibpolic.user,

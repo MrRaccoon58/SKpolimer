@@ -1,7 +1,8 @@
+
 "use strict";
 
 module.exports = function() {
-  $.gulp.task("prostupInfo:images", function() {
+  $.gulp.task("ftp:floor:img:st", function() {
     var ftp = $.ftp.create({
       host: $.pass.ftp.zolotosn.host,
       user: $.pass.ftp.zolotosn.user,
@@ -19,7 +20,7 @@ module.exports = function() {
       .src(globs, {
         base: "./src/floor/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(ftp.newer("/www_Prostup-info.ru/img")) 
-      .pipe(ftp.dest("/www_Prostup-info.ru/img"));
+      .pipe(ftp.newer("/www_Stupen-info.ru/images/stories")) 
+      .pipe(ftp.dest("/www_Stupen-info.ru/images/stories"));
   });
 };

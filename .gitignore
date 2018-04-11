@@ -1,7 +1,9 @@
+public/
+
 # Удаляем изображения из слежения
-src/floor/images
-src/main/images
-src/zoloto/images
+src/pages/floor/images
+src/pages/main/images
+src/pages/gold/images
 # ===
 
 src/plugins

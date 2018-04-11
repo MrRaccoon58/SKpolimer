@@ -1,16 +1,20 @@
 'use strict';
 
 module.exports = [
-  //main
-  './gulp/tasks/main/images/sibkraspolimer:images.js',
-  
-  //Floor
-  './gulp/tasks/clean.js',
-  './gulp/tasks/floor/images/prostupInfo:images.js',
-  './gulp/tasks/floor/images/stupenInfo:images.js',
-  './gulp/tasks/floor/images/skpolimer:images.js',
-  './gulp/tasks/floor/images/skpolimerSibkraspolimer:images.js',
-  
-  //zoloto
-  './gulp/tasks/zoloto/images/zolotosnab:images.js',
+  //ftp
+    //floor
+      './gulp/tasks/ftp/floor/img/ftp:floor:img:pr',
+      './gulp/tasks/ftp/floor/img/ftp:floor:img:sk',
+      './gulp/tasks/ftp/floor/img/ftp:floor:img:sksib',
+      './gulp/tasks/ftp/floor/img/ftp:floor:img:st',
+      //gold
+      './gulp/tasks/ftp/gold/img/ftp:gold:img:z',
+      //main
+      './gulp/tasks/ftp/main/img/ftp:main:img:sk',
+  //img
+    './gulp/tasks/img/img:floor.js',
+    './gulp/tasks/img/img:gold.js',
+    './gulp/tasks/img/img:main.js',
+    
+      
 ]

@@ -1,13 +1,13 @@
 "use strict";
 
 module.exports = function() {
-  $.gulp.task("skpolimerSibkraspolimer:images", function() {
+  $.gulp.task("ftp:floor:img:sk", function() {
     var ftp = $.ftp.create({
-      host: $.pass.ftp.sibpolic.host,
-      user: $.pass.ftp.sibpolic.user,
-      password: $.pass.ftp.sibpolic.password,
-      parallel: $.pass.ftp.sibpolic.parallel,
-      log: $.pass.ftp.sibpolic.log,
+      host: $.pass.ftp.skpolimer.host,
+      user: $.pass.ftp.skpolimer.user,
+      password: $.pass.ftp.skpolimer.password,
+      parallel: $.pass.ftp.skpolimer.parallel,
+      log: $.pass.ftp.skpolimer.log,
     });
 
     //перечисляем папки и файлы которые хотим загрузить
@@ -19,7 +19,7 @@ module.exports = function() {
       .src(globs, {
         base: "./src/floor/images/", //"обрезаем" ненужный путь
         buffer: false })
-      .pipe(ftp.newer("/skpolimer-new/images")) 
-      .pipe(ftp.dest("/skpolimer-new/images"));
+      .pipe(ftp.newer("/skpolimer.ru/docs/images"))
+      .pipe(ftp.dest("/skpolimer.ru/docs/images"));
   });
 };

@@ -3,6 +3,7 @@
 global.$ = {
   package: require("./package.json"),
   pass: require("./gulp/pass.js"),
+  folders: require("./gulp/folders.js"),
   path: {
     task: require("./gulp/path/tasks.js")
   },
@@ -16,17 +17,33 @@ $.path.task.forEach(function(taskPath) {
   require(taskPath)();
 });
 // Если стоит пометка не актуально то значит картинки загружаются на сервер через плагин и пока не понятно как реализовать правильно
-$.gulp.task('floor:images:upload', //заливка изображений на все напольные сайты
+$.gulp.task('ftp:floor:img', //заливка изображений на все напольные сайты
   $.gulp.series(
-        'prostupInfo:images',
-        'stupenInfo:images',
-        'skpolimer:images',
-        // 'skpolimerSibkraspolimer:images', // не актуально
+        'ftp:floor:img:pr',
+        'ftp:floor:img:sk',
+        // 'ftp:floor:img:sksib', // Не актуально
+        'ftp:floor:img:st',
   )
 );
 
-$.gulp.task('main:images:upload', 
+$.gulp.task('ftp:main:img', 
     $.gulp.series(
-      'sibkraspolimer:images',
+      'ftp:main:img:sk',
     )
 );
+
+$.gulp.task('img', 
+    $.gulp.series(
+      'img:floor',
+      'img:gold',
+      'img:main',
+    )
+);
+
+$.gulp.task('imagemin', function() {
+  return $.gulp.src('src/pages/floor/images/Almaty/st1/adress1.jpg')
+    .pipe($.p.imagemin())
+    .pipe($.gulp.dest('test/'))
+});
+
+
