@@ -11,6 +11,7 @@ module.exports = function() {
   $.gulp.task("img:main", function() {
     return $.gulp
       .src(images, { base: './src/pages/'})
+      .pipe($.p.imagemin())      
       .pipe($.p.imageResize({
         imageMagick: true,
         // height : 1100,

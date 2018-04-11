@@ -40,10 +40,3 @@ $.gulp.task('img',
     )
 );
 
-$.gulp.task('imagemin', function() {
-  return $.gulp.src('src/pages/floor/images/Almaty/st1/adress1.jpg')
-    .pipe($.p.imagemin())
-    .pipe($.gulp.dest('test/'))
-});
-
-
