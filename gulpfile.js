@@ -19,7 +19,7 @@ $.path.task.forEach(function(taskPath) {
 $.gulp.task('floor:images:upload', //заливка изображений на все напольные сайты
   $.gulp.series(
         'prostupInfo:images',
-        // 'stupenInfo:images',
+        'stupenInfo:images',
         'skpolimer:images',
         // 'skpolimerSibkraspolimer:images', // не актуально
   )
