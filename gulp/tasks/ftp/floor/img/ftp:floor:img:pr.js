@@ -11,7 +11,9 @@ module.exports = function() {
     });
 
     //перечисляем папки и файлы которые хотим загрузить
-    var globs = ["./src/floor/images/**/*.jpg"];
+    var globs = [
+      $.folders.public + "/images/floor/images/**/*.jpg"
+    ];
 
     // using base = '.' will transfer everything to /public_html correctly
     // turn off buffering in gulp.src for best performance

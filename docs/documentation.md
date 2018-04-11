@@ -2,6 +2,8 @@
 
 - [Напольные сайты](floor/floor.md)
 - [Золотые сайты](gold/zoloto.md)
+- [Обновления](../UPDATES.MD)
+- [Описание](../README.MD)
 
 ___
 
