@@ -3,6 +3,8 @@
 "use strict";
 module.exports = function() {
   var images = [
+        $.folders.src.pages + 'main/images/**/*.JPG',
+        $.folders.src.pages + 'main/images/**/*.JPEG',
         $.folders.src.pages + 'main/images/**/*.jpg',
         $.folders.src.pages + 'main/images/**/*.jpeg',
         $.folders.src.pages + 'main/images/**/*.png',
@@ -11,18 +13,18 @@ module.exports = function() {
   $.gulp.task("img:main", function() {
     return $.gulp
       .src(images, { base: './src/pages/'})
-      .pipe($.p.imagemin())      
+      // .pipe($.p.imagemin())      
       .pipe($.p.imageResize({
         imageMagick: true,
         // height : 1100,
-        width : 800,
+        width : 1000,
         crop : false,
         quality: .8,
         upscale : false
       }))
       .pipe($.p.watermark({
             image: $.folders.src.pages + "main/data/watermark.png",
-            resize: '350x350',
+            resize: '200x300',
             gravity: 'SouthWest'
       }))
       .pipe($.gulp.dest($.folders.public + 'images'));
