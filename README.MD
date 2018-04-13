@@ -21,10 +21,6 @@
 `npm i`
 
 После того как зависимости установятся, мы сможем использовать команду **gulp** для выполнения нужных нам задач:
-      test: 'hello there'
-      test: 'hello there'
-      test: 'hello there'
-      test: 'hello there'
 
 ### Что умеет программа
 
