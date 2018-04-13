@@ -24,7 +24,7 @@ module.exports = function() {
       }))
       .pipe($.p.watermark({
             image: $.folders.src.pages + "main/data/watermark.png",
-            resize: '300x400',
+            resize: '200x300',
             gravity: 'SouthWest'
       }))
       .pipe($.gulp.dest($.folders.public + 'images'));
