@@ -1,0 +1,31 @@
+style.
+  a:hover{color: #072B59!important; text-decoration: underline!important}
+.sign(style="margin-left: 20px margin-top: 10px")
+  hr
+  h2(style="margin: 0; padding: 0; color: #F03839; font-family: Tahoma, arial, sans-serif") Евгений Лукьянов
+  p(style="margin: 0; margin-bottom: 10px; padding: 0; color: #343434") Веб-разработчик | 
+    span(style="font-weight: 800") СК-Полимеры
+  - 
+    var contacts = { 
+      phone:{name: "Телефон:", data: '<a style="color: #0C4083; text-decoration: none;" href="tel:79293371704">+7(929)337-17-04</a>'},
+      email:{name: "Email:", data: '<a style="color: #0C4083; text-decoration: none;" href="mailto:elukianov.e12@gmail.com">lukianov.e12@gmail.com</a>'},
+      website:{name: "Сайт:", data: '<a style="color: #0C4083; text-decoration: none;" href="https://www.sibkraspolimer.ru">www.sibkraspolimer.ru</a>'},
+    }
+  .contacts
+    ul(style="margin: 0; margin-bottom: 10px; padding: 0")
+      for contact in contacts
+        li(style="list-style-type: none; margin: 0; padding: 0")
+          p(style="display: inline-block; margin: 5px 0 0 0; padding: 0; width: 70px; color: #F03839; text-align: left;")= contact.name
+          p(style="display: inline-block; margin: 0; padding: 0; color: #343434; text-align: left;")!= contact.data
+  - 
+    var socials = {  
+      vk:{name: "Вконтакте", link: 'https://vk.com/mrraccoon'},
+      gh:{name: "Github", link: 'https://github.com/mrraccoon58'},
+      cp:{name: "Codepen", link: 'https://codepen.io/MrRaccoon58'},
+    }
+  .socials
+    p(style="margin: 0; padding: 0; color: #343434") Меня так же можно найти:
+    ul(style="margin: 0; margin-bottom: 10px; padding: 0")
+      for social in socials
+        li(style="display: inline-block; list-style-type: none; margin: 0; padding: 0")
+          a(style="display: inline-block; color: #0C4083;" href= social.link)= social.name
